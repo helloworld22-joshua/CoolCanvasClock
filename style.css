@@ -1,7 +1,65 @@
-#canvas {
+.card {
   position: absolute;
+  width: 500px;
+  aspect-ratio: 1/1;
   inset: 50%;
   translate: -50% -50%;
-  background-color: #000;
-  border-radius: 50%;
+}
+.card #canvas {
+  --perspective: 500px;
+  --rotationX: 0;
+  --rotationY: 0;
+  --rotationZ: 0;
+  --angle: 15deg;
+  transform: perspective(var(--perspective)) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
+  transition: transform 0.5s;
+}
+.card .tracker {
+  position: absolute;
+  width: 33.3333333333%;
+  height: 33.3333333333%;
+  z-index: 1;
+}
+.card .tracker:nth-child(3n-2) {
+  left: 0;
+}
+.card .tracker:nth-child(3n-1) {
+  left: 33.3333333333%;
+}
+.card .tracker:nth-child(3n) {
+  right: 0;
+}
+.card .tracker:nth-child(n+4):nth-child(-n+6) {
+  top: 33.3333333333%;
+}
+.card .tracker:nth-child(n+7):nth-child(-n+9) {
+  bottom: 0;
+}
+.card .tracker:nth-child(1):hover ~ #canvas {
+  --rotationX: var(--angle);
+  --rotationY: calc(var(--angle) * -1);
+}
+.card .tracker:nth-child(2):hover ~ #canvas {
+  --rotationX: var(--angle);
+}
+.card .tracker:nth-child(3):hover ~ #canvas {
+  --rotationX: var(--angle);
+  --rotationY: var(--angle);
+}
+.card .tracker:nth-child(4):hover ~ #canvas {
+  --rotationY: calc(var(--angle) * -1);
+}
+.card .tracker:nth-child(6):hover ~ #canvas {
+  --rotationY: var(--angle);
+}
+.card .tracker:nth-child(7):hover ~ #canvas {
+  --rotationY: calc(var(--angle) * -1);
+  --rotationX: calc(var(--angle) * -1);
+}
+.card .tracker:nth-child(8):hover ~ #canvas {
+  --rotationX: calc(var(--angle) * -1);
+}
+.card .tracker:nth-child(9):hover ~ #canvas {
+  --rotationY: var(--angle);
+  --rotationX: calc(var(--angle) * -1);
 }/*# sourceMappingURL=style.css.map */

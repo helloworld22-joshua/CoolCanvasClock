@@ -22,7 +22,7 @@ function drawFace(ctx, radius) {
 
 function drawNumbers(ctx, radius) {
     let ang, num;
-    ctx.font = "35px segoe ui";
+    ctx.font = "35px Segoe Ui";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.fillStyle = '#000';
@@ -58,7 +58,7 @@ function drawTime(ctx, radius){
     // Second
     s = s * Math.PI / 30;
     drawHand(ctx, s, radius * 0.75, radius * 0.02, "#f00");
-    //drawBorder(ctx, radius);
+    //drawBorder(ctx, radius, s);
 }
 
 function drawHand(ctx, pos, length, width, color) {
@@ -73,14 +73,18 @@ function drawHand(ctx, pos, length, width, color) {
     ctx.rotate(-pos);
 }
 
-function drawBorder(ctx, radius) {
-    let grad = ctx.createLinearGradient(200, 0, 250, 0);
+function drawBorder(ctx, radius, s) {
+    ctx.beginPath();
+    ctx.arc(0, radius, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = '#0ff';
+    ctx.fill();
+
+
+    /* let grad = ctx.createLinearGradient(200, 0, 250, 0);
     grad.addColorStop(0, "#0000");
     grad.addColorStop(1, "#f00");
-
-    // Fill with gradient
     ctx.beginPath();
     ctx.arc(0, 0, radius * 1.05, 0, 2 * Math.PI);
     ctx.fillStyle = grad;
-    ctx.fill();
+    ctx.fill(); */
 }

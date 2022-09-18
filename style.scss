@@ -6,12 +6,11 @@
     translate: -50% -50%;
 
     #canvas {
-        --perspective: 500px;
         --rotationX: 0;
         --rotationY: 0;
         --rotationZ: 0;
         --angle: 15deg;
-        transform: perspective(var(--perspective)) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
+        transform: perspective(500px) rotateX(var(--rotationX)) rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
         transition: transform 1s;
     }
 

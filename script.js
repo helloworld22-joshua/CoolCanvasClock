@@ -79,7 +79,6 @@ function drawBorder(ctx, radius, s) {
     ctx.fillStyle = '#0ff';
     ctx.fill();
 
-
     /* let grad = ctx.createLinearGradient(200, 0, 250, 0);
     grad.addColorStop(0, "#0000");
     grad.addColorStop(1, "#f00");

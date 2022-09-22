@@ -1,3 +1,9 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-image: radial-gradient(#fff, #999);
+}
+
 .card {
   position: absolute;
   width: 500px;
